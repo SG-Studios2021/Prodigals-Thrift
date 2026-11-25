@@ -757,3 +757,38 @@ footer {
         gap: 10px;
     }
 }
+
+.shop-rules-box {
+    margin-top: 22px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: rgba(37, 137, 255, 0.08);
+    border: 1px solid rgba(37, 137, 255, 0.3);
+    max-width: 560px;
+}
+
+.rules-title {
+    display: block;
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.rules-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.rules-list li::before {
+    content: "• ";
+    color: var(--accent);
+    font-weight: 700;
+}
