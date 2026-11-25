@@ -58,7 +58,26 @@ const MainPage = () => {
                     </h1>
 
                     <p className="hero-description">
-                        SELECTED THRIFTED PAIRS!.
+                        SELECTED THRIFTED PAIRS!
+                        
+                        SHOP RULES!
+
+                        ALWAYS READ DETAILS BEFORE BUYING, ALL SIZES & FLAWS ARE INDICATED
+
+PAYMENT FIRST POLICY — GCASH / BANK TRANSFER ONLY (NO COD OR COP)
+
+1–2 DAYS RESERVATION ONLY • NO CANCELLING • NON-REFUNDABLE DP
+
+NO RUSH SHIPPING (2–3 DAYS PROCESSING — IT STUDENT SELLERS)
+
+NO RETURN / NO EXCHANGE / NO REFUND
+
+MINE AT YOUR OWN RISK
+
+ALWAYS MANAGE YOUR EXPECTATIONS — ALL PAIRS ARE SELECTED UKAY / THRIFTED ONLY
+
+
+                    
                     </p>
 
                     <div className="hero-buttons">
