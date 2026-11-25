@@ -102,9 +102,7 @@ const MainPage = () => {
                 <div className="section-heading">
                     <p>01 — ON-HAND INVENTORY</p>
                     <h2>
-                        Legit checked.
-                        <br />
-                        Ready to ship.
+                        The freshest thrifted.
                     </h2>
                 </div>
 
