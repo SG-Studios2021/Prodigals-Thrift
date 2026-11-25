@@ -158,7 +158,7 @@ const MainPage = () => {
           {/* MEET THE CEOS */}
             <section className="ceo-section" id="ceos">
                 <div className="section-heading center">
-                    <p>THE FOUNDERS • DAVAO CITY</p>
+                    <p>THE FOUNDERS</p>
                     <h2>Meet the CEOs.</h2>
                 </div>
 
@@ -224,7 +224,7 @@ const MainPage = () => {
             {/* ON-HAND SHOES */}
             <section className="section" id="drops">
                 <div className="section-heading">
-                    <p>01 — ON-HAND INVENTORY</p>
+                    <p>01 — SHOP INVENTORY!</p>
                     <h2>The freshest thrifted.</h2>
                 </div>
 
