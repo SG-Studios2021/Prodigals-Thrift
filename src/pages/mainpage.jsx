@@ -50,7 +50,7 @@ const MainPage = () => {
             {/* HERO SECTION (LOGO ONLY ON RIGHT) */}
             <section className="hero" id="home">
                 <div className="hero-content">
-                    <p className="small-title">DAVAO CITY • CURATED SNEAKER RESELLER</p>
+                    <p className="small-title">SHOP OUR HOT LIST!</p>
 
                     <h1>
                         Authentic Pairs.
@@ -314,7 +314,7 @@ const MainPage = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <span>© 2026 Prodigal$ Sneaker Resell PH.</span>
+                    <span>© 2026 Prodigal$ Thrift</span>
                     <span>Davao City • Philippines</span>
                 </div>
             </footer>
