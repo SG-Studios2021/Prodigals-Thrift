@@ -14,8 +14,8 @@ const THEMES = [
 
 const MainPage = () => {
     const [activeFilter, setActiveFilter] = useState("All");
-    const [lightMode, setLightMode] = useState(true);
-    const [weather, setWeather] = useState("off"); // "off" | "rain" | "snow"
+    const [lightMode, setLightMode] = useState(false);
+    const [weather, setWeather] = useState("snow"); // "off" | "rain" | "snow"
     const [theme, setTheme] = useState(THEMES[0]);
 
     // Sync CSS variables whenever theme color changes
