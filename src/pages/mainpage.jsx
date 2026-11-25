@@ -86,7 +86,6 @@ const MainPage = () => {
                 </div>
 
                 {/* HERO LOGO SHOWCASE */}
-               {/* HERO LOGO SHOWCASE */}
                 <div className="hero-profiles hero-logo-only">
                     <div className="hero-logo-orb">
                         <img
@@ -94,20 +93,19 @@ const MainPage = () => {
                             alt="Prodigal$ Official Logo"
                         />
                     </div>
-
-                    <div className="hero-logo-rect">
-                        <img
-                            src="/images/prodigalglow.png"
-                            alt="Prodigal$ Banner Logo"
-                        />
-                    </div>
-
                     <div className="circle-decoration"></div>
                 </div>
 
                 
             </section>
 
+  <div className="hero-logo-rect">
+                        <img
+                            src="/images/prodigalglow.png"
+                            alt="Prodigal$ Banner Logo"
+                        />
+                    </div>
+                    
             {/* ON-HAND SHOES */}
             <section className="section" id="drops">
                 <div className="section-heading">
