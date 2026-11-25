@@ -229,8 +229,43 @@ button {
 
 .hero-logo-only {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 24px;
+    height: auto;
+    min-height: 550px;
+}
+
+.hero-logo-rect {
+    position: relative;
+    z-index: 2;
+    width: 320px;
+    height: 110px;
+    border-radius: 20px;
+    padding: 16px 24px;
+    background: radial-gradient(circle at 30% 30%, #161b26, #0a0a0c 75%);
+    border: 1px solid rgba(37, 137, 255, 0.45);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.75),
+        0 0 45px rgba(37, 137, 255, 0.2);
+    display: grid;
+    place-items: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-logo-rect:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.85),
+        0 0 65px rgba(37, 137, 255, 0.38);
+}
+
+.hero-logo-rect img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .hero-logo-orb {
