@@ -58,10 +58,7 @@ const MainPage = () => {
                     </h1>
 
                     <p className="hero-description">
-                        100% legit-checked, on-hand sneakers ready for same-day
-                        Davao meetup or nationwide shipping. Browse available
-                        sizes below and message us directly on Facebook
-                        Marketplace to lock in your pair.
+                        SELECTED THRIFTED PAIRS!.
                     </p>
 
                     <div className="hero-buttons">
