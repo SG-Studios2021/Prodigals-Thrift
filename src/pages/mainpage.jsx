@@ -58,7 +58,7 @@ const MainPage = () => {
                     </h1>
 
                     <p className="hero-description">
-                        SELECTED THRIFTED PAIRS!
+                       <span className="rules-title">SHOP RULES!</span>
                         
 <ul className="rules-list">
         <li>ALWAYS READ DETAILS BEFORE BUYING, ALL SIZES & FLAWS ARE INDICATED</li>
