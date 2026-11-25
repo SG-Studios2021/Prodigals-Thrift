@@ -50,7 +50,7 @@ const MainPage = () => {
             {/* HERO SECTION (LOGO ONLY ON RIGHT) */}
             <section className="hero" id="home">
                 <div className="hero-content">
-                    <p className="small-title">SHOP OUR HOT LIST!</p>
+                  LIMITED THRIFTED PAIRS!
 
                     <h1>
                         This is
