@@ -53,7 +53,7 @@ const MainPage = () => {
                     <p className="small-title">SHOP OUR HOT LIST!</p>
 
                     <h1>
-                        Authentic Pairs.
+                        This is
                         <span> Prodigal$.</span>
                     </h1>
 
