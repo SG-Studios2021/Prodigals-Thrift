@@ -1,12 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CursorTrail from "../components/cursortrail";
+import WeatherOverlay from "../components/weatheroverlay";
 import { SHOES } from "../data/shoes";
 import "../style/mainpage.css";
 
+const THEMES = [
+    { name: "Electric Blue", hex: "#2589ff", soft: "#7ab8ff", rgb: [37, 137, 255] },
+    { name: "Emerald", hex: "#10b981", soft: "#6ee7b7", rgb: [16, 185, 129] },
+    { name: "Crimson", hex: "#ef4444", soft: "#fca5a5", rgb: [239, 68, 68] },
+    { name: "Gold", hex: "#f59e0b", soft: "#fcd34d", rgb: [245, 158, 11] },
+    { name: "Violet", hex: "#8b5cf6", soft: "#c4b5fd", rgb: [139, 92, 246] },
+];
+
 const MainPage = () => {
     const [activeFilter, setActiveFilter] = useState("All");
+    const [lightMode, setLightMode] = useState(false);
+    const [weather, setWeather] = useState("off"); // "off" | "rain" | "snow"
+    const [theme, setTheme] = useState(THEMES[0]);
 
-    // Automatically builds filter tabs from whatever categories you put in src/data/shoes.js
+    // Sync CSS variables whenever theme color changes
+    useEffect(() => {
+        const root = document.documentElement;
+        root.style.setProperty("--accent", theme.hex);
+        root.style.setProperty("--accent-soft", theme.soft);
+        root.style.setProperty(
+            "--accent-glow",
+            `rgba(${theme.rgb[0]}, ${theme.rgb[1]}, ${theme.rgb[2]}, 0.22)`
+        );
+    }, [theme]);
+
+    const cycleWeather = () => {
+        setWeather((prev) => (prev === "off" ? "rain" : prev === "rain" ? "snow" : "off"));
+    };
+
     const categories = ["All", ...new Set(SHOES.map((shoe) => shoe.category))];
 
     const visibleShoes =
@@ -15,8 +41,9 @@ const MainPage = () => {
             : SHOES.filter((shoe) => shoe.category === activeFilter);
 
     return (
-        <div className="portfolio">
-            <CursorTrail />
+        <div className={`portfolio ${lightMode ? "light-theme" : ""}`}>
+            <CursorTrail color={theme.rgb} />
+            <WeatherOverlay mode={weather} accentRgb={theme.rgb} />
 
             {/* NAVBAR */}
             <nav className="navbar">
@@ -37,42 +64,72 @@ const MainPage = () => {
                     <a href="#lookbook">Showcase</a>
                 </div>
 
-                <a
-                    href="https://www.facebook.com/marketplace/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cart-trigger"
-                >
-                    FB Marketplace ↗
-                </a>
+                {/* THEME, LIGHT/DARK & WEATHER CONTROLS */}
+                <div className="nav-controls">
+                    <div className="color-swatches" title="Change Theme Color">
+                        {THEMES.map((t) => (
+                            <button
+                                key={t.name}
+                                type="button"
+                                className={`swatch-btn ${theme.name === t.name ? "active" : ""}`}
+                                style={{ backgroundColor: t.hex }}
+                                onClick={() => setTheme(t)}
+                                aria-label={t.name}
+                            />
+                        ))}
+                    </div>
+
+                    <button
+                        type="button"
+                        className="icon-pill-btn"
+                        onClick={cycleWeather}
+                        title="Toggle Rain / Snow"
+                    >
+                        {weather === "off" ? "☀️ Clear" : weather === "rain" ? "🌧️ Rain" : "❄️ Snow"}
+                    </button>
+
+                    <button
+                        type="button"
+                        className="icon-pill-btn"
+                        onClick={() => setLightMode((prev) => !prev)}
+                        title="Toggle Light / Dark Mode"
+                    >
+                        {lightMode ? "🌙 Dark" : "☀️ Light"}
+                    </button>
+
+                    <a
+                        href="https://www.facebook.com/marketplace/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cart-trigger"
+                    >
+                        FB Marketplace ↗
+                    </a>
+                </div>
             </nav>
 
-            {/* HERO SECTION (LOGO ONLY ON RIGHT) */}
+            {/* HERO SECTION */}
             <section className="hero" id="home">
                 <div className="hero-content">
-                  LIMITED THRIFTED PAIRS!
+                    <p className="small-title">LIMITED THRIFTED PAIRS!</p>
 
                     <h1>
                         This is
                         <span> Prodigal$.</span>
                     </h1>
 
-                    <p className="hero-description">
-                       <span className="rules-title">SHOP RULES!</span>
-                        
-<ul className="rules-list">
-        <li>ALWAYS READ DETAILS BEFORE BUYING, ALL SIZES & FLAWS ARE INDICATED</li>
-        <li>PAYMENT FIRST POLICY — GCASH / BANK TRANSFER ONLY (NO COD OR COP)</li>
-        <li>1–2 DAYS RESERVATION ONLY • NO CANCELLING • NON-REFUNDABLE DP</li>
-        <li>NO RUSH SHIPPING (2–3 DAYS PROCESSING — IT STUDENT SELLERS)</li>
-        <li>NO RETURN / NO EXCHANGE / NO REFUND</li>
-        <li>MINE AT YOUR OWN RISK</li>
-        <li>ALWAYS MANAGE YOUR EXPECTATIONS — ALL PAIRS ARE SELECTED / THRIFTED ONLY</li>
-    </ul>
-
-
-                    
-                    </p>
+                    <div className="hero-description">
+                        <span className="rules-title">SHOP RULES!</span>
+                        <ul className="rules-list">
+                            <li>ALWAYS READ DETAILS BEFORE BUYING, ALL SIZES & FLAWS ARE INDICATED</li>
+                            <li>PAYMENT FIRST POLICY — GCASH / BANK TRANSFER ONLY (NO COD OR COP)</li>
+                            <li>1–2 DAYS RESERVATION ONLY • NO CANCELLING • NON-REFUNDABLE DP</li>
+                            <li>NO RUSH SHIPPING (2–3 DAYS PROCESSING — IT STUDENT SELLERS)</li>
+                            <li>NO RETURN / NO EXCHANGE / NO REFUND</li>
+                            <li>MINE AT YOUR OWN RISK</li>
+                            <li>ALWAYS MANAGE YOUR EXPECTATIONS — ALL PAIRS ARE SELECTED / THRIFTED ONLY</li>
+                        </ul>
+                    </div>
 
                     <div className="hero-buttons">
                         <a href="#drops" className="primary-btn">
@@ -95,24 +152,23 @@ const MainPage = () => {
                     </div>
                     <div className="circle-decoration"></div>
                 </div>
-
-                
             </section>
 
-  <div className="hero-logo-rect">
-                        <img
-                            src="/images/prodigalglow.png"
-                            alt="Prodigal$ Banner Logo"
-                        />
-                    </div>
-                    
+            {/* CENTERED RECTANGLE BANNER LOGO */}
+            <div className="center-banner-wrap">
+                <div className="hero-logo-rect">
+                    <img
+                        src="/images/prodigalglow.png"
+                        alt="Prodigal$ Banner Logo"
+                    />
+                </div>
+            </div>
+
             {/* ON-HAND SHOES */}
             <section className="section" id="drops">
                 <div className="section-heading">
                     <p>01 — ON-HAND INVENTORY</p>
-                    <h2>
-                        The freshest thrifted.
-                    </h2>
+                    <h2>The freshest thrifted.</h2>
                 </div>
 
                 <div className="filter-bar">
@@ -120,9 +176,7 @@ const MainPage = () => {
                         <button
                             key={cat}
                             type="button"
-                            className={`filter-pill ${
-                                activeFilter === cat ? "active" : ""
-                            }`}
+                            className={`filter-pill ${activeFilter === cat ? "active" : ""}`}
                             onClick={() => setActiveFilter(cat)}
                         >
                             {cat}
@@ -137,9 +191,7 @@ const MainPage = () => {
                             className={`person-card ${idx % 2 === 1 ? "reverse" : ""}`}
                         >
                             <div className="person-image">
-                                <span className="price-badge">
-                                    {shoe.price}
-                                </span>
+                                <span className="price-badge">{shoe.price}</span>
                                 <img src={shoe.image} alt={shoe.name} />
                             </div>
 

@@ -229,43 +229,8 @@ button {
 
 .hero-logo-only {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
-    height: auto;
-    min-height: 550px;
-}
-
-.hero-logo-rect {
-    position: relative;
-    z-index: 2;
-    width: 320px;
-    height: 110px;
-    border-radius: 20px;
-    padding: 16px 24px;
-    background: radial-gradient(circle at 30% 30%, #161b26, #0a0a0c 75%);
-    border: 1px solid rgba(37, 137, 255, 0.45);
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.75),
-        0 0 45px rgba(37, 137, 255, 0.2);
-    display: grid;
-    place-items: center;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.hero-logo-rect:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.85),
-        0 0 65px rgba(37, 137, 255, 0.38);
-}
-
-.hero-logo-rect img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
 }
 
 .hero-logo-orb {
@@ -826,4 +791,219 @@ footer {
     content: "• ";
     color: var(--accent);
     font-weight: 700;
+}
+
+/* =========================
+   CENTERED BANNER LOGO
+========================= */
+
+.center-banner-wrap {
+    width: 100%;
+    padding: 30px 7% 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #080808;
+}
+
+.hero-logo-rect {
+    width: 100%;
+    max-width: 520px;
+    height: 150px;
+    border-radius: 22px;
+    padding: 20px 32px;
+    background: radial-gradient(circle at 30% 30%, #161b26, #0a0a0c 75%);
+    border: 1px solid var(--accent);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.75),
+        0 0 50px var(--accent-glow);
+    display: grid;
+    place-items: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-logo-rect:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+.hero-logo-rect img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================
+   NAV CONTROLS (THEME / WEATHER / LIGHT MODE)
+========================= */
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-swatches {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.swatch-btn {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.swatch-btn:hover {
+    transform: scale(1.2);
+}
+
+.swatch-btn.active {
+    border-color: #ffffff;
+    transform: scale(1.2);
+}
+
+.icon-pill-btn {
+    padding: 8px 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: #f5f5f5;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.icon-pill-btn:hover {
+    border-color: var(--accent);
+}
+
+/* =========================
+   LIGHT MODE THEME
+========================= */
+
+.portfolio.light-theme {
+    background: #f6f7fb;
+    color: #111827;
+}
+
+.portfolio.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.portfolio.light-theme .nav-links a {
+    color: #4b5563;
+}
+
+.portfolio.light-theme .color-swatches,
+.portfolio.light-theme .icon-pill-btn {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    color: #111827;
+}
+
+.portfolio.light-theme .swatch-btn.active {
+    border-color: #111827;
+}
+
+.portfolio.light-theme .cart-trigger {
+    color: #111827;
+}
+
+.portfolio.light-theme .hero {
+    background:
+        radial-gradient(circle at 80% 45%, var(--accent-glow), transparent 42%),
+        #f6f7fb;
+}
+
+.portfolio.light-theme .hero h1 span {
+    background: linear-gradient(90deg, #111827, var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.portfolio.light-theme .rules-list,
+.portfolio.light-theme .person-info > p:not(.role),
+.portfolio.light-theme .timeline-item p,
+.portfolio.light-theme .fact-card p {
+    color: #4b5563;
+}
+
+.portfolio.light-theme .secondary-btn {
+    border-color: #cbd5e1;
+    color: #111827;
+}
+
+.portfolio.light-theme .center-banner-wrap,
+.portfolio.light-theme .media-section {
+    background: #f6f7fb;
+}
+
+.portfolio.light-theme .journey,
+.portfolio.light-theme .facts-section {
+    background: #eef1f7;
+}
+
+.portfolio.light-theme .filter-pill {
+    background: #ffffff;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+.portfolio.light-theme .filter-pill.active {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.portfolio.light-theme .person-image {
+    background: #ffffff;
+    border-color: #e5e7eb;
+}
+
+.portfolio.light-theme .facts span {
+    color: #111827;
+}
+
+.portfolio.light-theme .size-highlight {
+    color: #111827 !important;
+}
+
+.portfolio.light-theme .timeline-item,
+.portfolio.light-theme .fact-grid,
+.portfolio.light-theme .fact-card {
+    border-color: #d1d5db;
+}
+
+.portfolio.light-theme .fact-card:hover {
+    background: #ffffff;
+}
+
+.portfolio.light-theme footer {
+    background: #e5e9f2;
+}
+
+.portfolio.light-theme .footer-bottom {
+    border-top-color: #cbd5e1;
+    color: #4b5563;
+}
+
+@media (max-width: 750px) {
+    .color-swatches,
+    .cart-trigger {
+        display: none;
+    }
+
+    .hero-logo-rect {
+        height: 115px;
+        padding: 14px 20px;
+    }
 }
