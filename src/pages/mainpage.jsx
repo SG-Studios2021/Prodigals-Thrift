@@ -155,14 +155,47 @@ const MainPage = () => {
             </section>
 
             {/* CENTERED RECTANGLE BANNER LOGO */}
-            <div className="center-banner-wrap">
-                <div className="hero-logo-rect">
-                    <img
-                        src="/images/prodigalglow.png"
-                        alt="Prodigal$ Banner Logo"
-                    />
+           {/* MEET THE CEOS */}
+            <section className="ceo-section" id="ceos">
+                <div className="section-heading center">
+                    <p>THE FOUNDERS • DAVAO CITY</p>
+                    <h2>Meet the CEOs.</h2>
                 </div>
-            </div>
+
+                <div className="ceo-grid">
+                    <div className="ceo-card">
+                        <div className="ceo-img-wrap">
+                            <img src="/images/edrian.png" alt="Edrian Caburnay" />
+                        </div>
+                        <span>CO-FOUNDER & CEO</span>
+                        <h3>Edrian Caburnay</h3>
+                    </div>
+
+                    <div className="ceo-card">
+                        <div className="ceo-img-wrap">
+                            <img src="/images/carl2.png" alt="John Carlo Jabagat" />
+                        </div>
+                        <span>CO-FOUNDER & CEO</span>
+                        <h3>John Carlo Jabagat</h3>
+                    </div>
+
+                    <div className="ceo-card">
+                        <div className="ceo-img-wrap">
+                            <img src="/images/vench.png" alt="Vench Villamor" />
+                        </div>
+                        <span>CO-FOUNDER & CEO</span>
+                        <h3>Vench Villamor</h3>
+                    </div>
+
+                    <div className="ceo-card">
+                        <div className="ceo-img-wrap">
+                            <img src="/images/cris.png" alt="Cris Lourence Vale" />
+                        </div>
+                        <span>CO-FOUNDER & CEO</span>
+                        <h3>Cris Lourence Vale</h3>
+                    </div>
+                </div>
+            </section>
 
             {/* ON-HAND SHOES */}
             <section className="section" id="drops">
