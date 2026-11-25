@@ -60,7 +60,7 @@ const MainPage = () => {
                     <p className="hero-description">
                         SELECTED THRIFTED PAIRS!
                         
-                        SHOP RULES!
+                        <span>SHOP RULES!
 
                         ALWAYS READ DETAILS BEFORE BUYING, ALL SIZES & FLAWS ARE INDICATED
 
@@ -74,7 +74,7 @@ NO RETURN / NO EXCHANGE / NO REFUND
 
 MINE AT YOUR OWN RISK
 
-ALWAYS MANAGE YOUR EXPECTATIONS — ALL PAIRS ARE SELECTED UKAY / THRIFTED ONLY
+ALWAYS MANAGE YOUR EXPECTATIONS — ALL PAIRS ARE SELECTED / THRIFTED ONLY </span> 
 
 
                     
