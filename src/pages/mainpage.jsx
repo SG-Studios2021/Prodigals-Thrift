@@ -155,7 +155,7 @@ const MainPage = () => {
             </section>
 
             {/* CENTERED RECTANGLE BANNER LOGO */}
-           {/* MEET THE CEOS */}
+          {/* MEET THE CEOS */}
             <section className="ceo-section" id="ceos">
                 <div className="section-heading center">
                     <p>THE FOUNDERS • DAVAO CITY</p>
@@ -163,37 +163,61 @@ const MainPage = () => {
                 </div>
 
                 <div className="ceo-grid">
-                    <div className="ceo-card">
+                    <a
+                        href="https://www.facebook.com/edrian.caburnay"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ceo-card"
+                    >
                         <div className="ceo-img-wrap">
                             <img src="/images/edrian.png" alt="Edrian Caburnay" />
                         </div>
                         <span>CO-FOUNDER & CEO</span>
                         <h3>Edrian Caburnay</h3>
-                    </div>
+                        <p className="ceo-fb-link">Facebook Profile ↗</p>
+                    </a>
 
-                    <div className="ceo-card">
+                    <a
+                        href="https://www.facebook.com/johncarlo.marangalacaba"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ceo-card"
+                    >
                         <div className="ceo-img-wrap">
                             <img src="/images/carl2.png" alt="John Carlo Jabagat" />
                         </div>
                         <span>CO-FOUNDER & CEO</span>
                         <h3>John Carlo Jabagat</h3>
-                    </div>
+                        <p className="ceo-fb-link">Facebook Profile ↗</p>
+                    </a>
 
-                    <div className="ceo-card">
+                    <a
+                        href="https://www.facebook.com/vench.villamor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ceo-card"
+                    >
                         <div className="ceo-img-wrap">
                             <img src="/images/vench.png" alt="Vench Villamor" />
                         </div>
                         <span>CO-FOUNDER & CEO</span>
                         <h3>Vench Villamor</h3>
-                    </div>
+                        <p className="ceo-fb-link">Facebook Profile ↗</p>
+                    </a>
 
-                    <div className="ceo-card">
+                    <a
+                        href="https://www.facebook.com/hoodboiKrz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ceo-card"
+                    >
                         <div className="ceo-img-wrap">
                             <img src="/images/cris.png" alt="Cris Lourence Vale" />
                         </div>
                         <span>CO-FOUNDER & CEO</span>
                         <h3>Cris Lourence Vale</h3>
-                    </div>
+                        <p className="ceo-fb-link">Facebook Profile ↗</p>
+                    </a>
                 </div>
             </section>
 
