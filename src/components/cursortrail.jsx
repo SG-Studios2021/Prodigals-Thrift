@@ -9,9 +9,9 @@ function startCursorTrail(cvs, opts = {}) {
 // const HOT = [255, 247, 214];
 
 // To this:
-const C = opts.color || [37, 137, 255];            // vibrant electric blue
+const C = opts.color || [37, 137, 255];
 const rgba = (a, rgb = C) => `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`;
-const HOT = [214, 238, 255];                       // icy blue-white spark core
+const HOT = [255, 255, 255];                     // icy blue-white spark core
   const ctx = cvs.getContext('2d');
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) return () => {};                     // respect reduced motion (matches the paper's NFR 1.4)
@@ -135,9 +135,12 @@ const HOT = [214, 238, 255];                       // icy blue-white spark core
 
 /* Add <CursorTrail /> once inside GradePage. It draws on one fixed canvas
    that ignores the mouse, so it never blocks clicks. */
-export default function CursorTrail() {
+export default function CursorTrail({ color = [37, 137, 255] }) {
     const ref = useRef(null);
-    useEffect(() => startCursorTrail(ref.current), []);
+    useEffect(() => {
+        if (!ref.current) return;
+        return startCursorTrail(ref.current, { color });
+    }, [color]);
     return (
         <canvas
             ref={ref}
