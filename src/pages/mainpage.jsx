@@ -3,6 +3,7 @@ import CursorTrail from "../components/cursortrail";
 import WeatherOverlay from "../components/weatheroverlay";
 import { SHOES } from "../data/shoes";
 import "../style/mainpage.css";
+import MinigameSection from "../components/minigamesection.jsx";
 
 const THEMES = [
     { name: "Electric Blue", hex: "#2589ff", soft: "#7ab8ff", rgb: [37, 137, 255] },
@@ -220,6 +221,8 @@ const MainPage = () => {
                     </a>
                 </div>
             </section>
+
+<MinigameSection />
 
             {/* ON-HAND SHOES */}
             <section className="section" id="drops">
