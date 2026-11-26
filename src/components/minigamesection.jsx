@@ -29,6 +29,24 @@ export default function MinigameSection() {
           }
         }
 
+        .prodigal-flowing-text {
+          background: linear-gradient(
+            120deg,
+            #ff2a5f,
+            #ff8a00,
+            #ffe600,
+            #18e078,
+            #1ca3ff,
+            #9d4edd,
+            #ff2a5f
+          );
+          background-size: 300% 300%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          animation: prodigalRainbowFlow 4s ease infinite;
+        }
+
         .prodigal-minigame-card {
           transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
@@ -142,6 +160,7 @@ export default function MinigameSection() {
         </span>
 
         <h2
+          className="prodigal-flowing-text"
           style={{
             margin: 0,
             fontSize: "clamp(24px, 4.5vw, 34px)",
